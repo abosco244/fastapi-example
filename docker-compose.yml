@@ -4,11 +4,11 @@ services:
   app:
     build: .
     container_name: app
-    command: python -m uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+    command: python -m uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 80
     volumes:
       - ./:/src/
     ports:
-      - 8002:8000
+      - 80:80
     environment:
       - DATABASE_URL=postgresql://fastapi:fastapi@db/fastapi
 
